@@ -1,0 +1,25 @@
+#%RAML 1.0
+title: hello world #Required Title
+version: 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/b03053b2-df12-418a-9e8d-ae60c9bb284b/ # baseUri: http://localhost:8081/v1
+mediaType: application/json
+/helloworld:
+  get: #HTTP Method declaration
+    responses:
+      200:
+        body:
+          application/json: 
+            type: |
+              {
+                "title": "Hello World Response",
+                "type": "object",
+                "properties":{
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            example: | # Example how response looks
+              {
+              "Message" : "Hello World!!"
+              }
